@@ -13,9 +13,11 @@ const Team1 = () => {
 
     return (
         <section className="team-section fix section-padding">
+{/*
             <div className="jip-shape float-bob-x">
                 <Image src="/assets/img/team/jip.png" alt="img" width={172} height={135}   />
             </div>
+             */}
             <div className="container">
                 <div className="section-title text-center">
                     <span className="sub-title wow fadeInUp">

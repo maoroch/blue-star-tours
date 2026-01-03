@@ -92,7 +92,7 @@ const Choose1 = () => {
                         </div>
                         <div className="col-lg-6">
                             <div className="feature-image wow img-custom-anim-left">
-                                <Image src="/assets/img/man-image.png" alt="img" width={636} height={577}   />
+                                <Image src="/assets/img/pexels-i-brahim-can-dayioglu-59599605-15222929.jpg" alt="img" width={636} height={577}   />
                             </div>
                         </div>
                     </div>
