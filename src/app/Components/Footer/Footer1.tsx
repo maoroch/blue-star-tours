@@ -10,8 +10,17 @@ const Footer1 = () => {
     }, []);
 
     return (
-        <footer className="footer-section fix bg-cover" data-background="/assets/img/footer/footer-bg.jpg">
-            <div className="container">
+        <footer className="footer-section fix bg-cover" data-background="/assets/img/footer/footer-bg.webp" style={{backgroundColor: 'rgba(0, 0, 0, 1)', position: 'relative'}}>
+            {/* Темный оверлей */}
+            <div style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                right: 0,
+                bottom: 0,
+                backgroundColor: 'rgba(0, 0, 0, 0.7)',
+            }}></div>
+                <div className="container">
                 <div className="footer-widget-wrapper-new">
                     <div className="row">
                         <div className="col-xl-4 col-lg-5 col-md-8 col-sm-6 wow fadeInUp wow" data-wow-delay=".2s">
