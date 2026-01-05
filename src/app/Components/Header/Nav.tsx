@@ -15,6 +15,7 @@ export default function Nav({ setMobileToggle }) {
         </Link>
       </li>
 
+{/*
       <li className="menu-item-has-children">
         <Link href="/destination" onClick={() => setMobileToggle(false)}>
          Направления
@@ -34,6 +35,7 @@ export default function Nav({ setMobileToggle }) {
           </ul>
         </DropDown>
       </li>
+*/}
 
       <li className="menu-item-has-children">
         <Link href="/tour" onClick={() => setMobileToggle(false)}>

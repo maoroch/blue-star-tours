@@ -9489,6 +9489,9 @@ input.main-search-input::placeholder {
     top: 50%;
     transform: translate(-50%, -50%);
   }
+    .cs_nav_list {
+      gap: 15px;
+    }
 
   .cs_site_header.cs_style_1 .cs_main_header_center {
     display: flex;
@@ -9521,7 +9524,6 @@ input.main-search-input::placeholder {
     display: flex !important;
     flex-wrap: wrap;
     height: inherit;
-    padding-top: 5px;
   }
 
   .cs_nav .cs_nav_list li:not(.cs-mega_menu) {
@@ -9538,7 +9540,6 @@ input.main-search-input::placeholder {
   }
 
   .cs_nav .cs_nav_list > li > a {
-    padding: 10px 0;
     display: inline-flex;
     position: relative;
     height: inherit;
