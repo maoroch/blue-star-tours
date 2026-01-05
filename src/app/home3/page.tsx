@@ -18,7 +18,7 @@ const page = () => {
         <div>
             <HeroBanner1></HeroBanner1>
             <Feature1></Feature1>
-            <Category1></Category1>
+{/*            <Category1></Category1> */}
             <About1></About1>
 {/*            <Cta1></Cta1>
 */}            <Destination1></Destination1>
