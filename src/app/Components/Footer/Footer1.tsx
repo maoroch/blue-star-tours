@@ -48,7 +48,7 @@ const Footer1 = () => {
                             <div className="single-widget-items">
                                 <div className="widget-head">
                                    <h4>
-                                    Быстрые ссылки
+                                     Ссылки
                                    </h4>
                                 </div>
                                 <ul className="list-items">
@@ -136,7 +136,7 @@ const Footer1 = () => {
                                         </div>
                                         <div className="content">
                                          <h6>
-                                             <a href="mailto:info@touron.com">info@touron.com</a> 
+                                             <a href="mailto:info@sea-star-tourism.kz">info@sea-star-tourism.kz</a> 
                                          </h6>
                                       </div>
                                     </div>

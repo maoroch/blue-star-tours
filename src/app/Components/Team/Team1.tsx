@@ -35,7 +35,7 @@ const Team1 = () => {
                             <div className="team-content">
                                 <h4><Link href="/team/team-details">{item.name}</Link></h4>
                                 <p>{item.content}</p>
-                                <div className="social-profile">
+{/*                                <div className="social-profile">
                                     <ul>
                                         <li><a href={item.facebook}><i className="bi bi-facebook"></i></a></li>
                                         <li><a href={item.twitter}><i className="bi bi-twitter-x"></i></a></li>
@@ -43,7 +43,7 @@ const Team1 = () => {
                                         <li><a href={item.instagram}><i className="bi bi-instagram"></i></a></li>
                                     </ul>
                                     <span className="plus-btn"><i className="bi bi-share"></i></span>
-                                </div>
+                                </div>*/}
                             </div>
                         </div>
                     </div>

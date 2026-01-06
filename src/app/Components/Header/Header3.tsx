@@ -47,7 +47,7 @@ export default function Header3({ variant } : any ) {
             <ul className="cs_header_contact_list cs_mp_0 cs_white_color">
                 <li>
                 <i className="bi bi-envelope-fill"></i>
-                  <a href="mailto:demo@example.com" aria-label="Email link">info@seastartourism.com</a>
+                  <a href="mailto:info@seastartourism.com" aria-label="Email link">info@seastartourism.com</a>
                 </li>
                 <li>
                 <i className="bi bi-telephone-fill"></i>
@@ -129,7 +129,7 @@ export default function Header3({ variant } : any ) {
                 <div className="search-cell">
                     <form method="get">
                         <div className="search-field-holder">
-                            <input type="search" className="main-search-input" placeholder="Search..." />
+                            <input type="search" className="main-search-input" placeholder="Поиск туров..." />
                         </div>
                     </form>
                 </div>

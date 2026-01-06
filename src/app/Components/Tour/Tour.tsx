@@ -29,9 +29,7 @@ const Tour = () => {
                                     <div className="destination-card-items mt-0">
                                         <div className="destination-image">
                                              <Image src={item.img} alt="img" width={287} height={240}   />
-                                            <div className="heart-icon">
-                                            <i className="bi bi-heart"></i>
-                                            </div>
+
                                         </div>
                                         <div className="destination-content">
                                             <ul className="meta">
@@ -63,7 +61,7 @@ const Tour = () => {
                                             </ul>
                                             <div className="price">
                                                 <h6>{item.price}<span>/Per day</span></h6>
-                                                <Link href="/tour/tour-details" className="theme-btn style-2">Book Now<i className="bi bi-arrow-right"></i></Link>
+                                                <Link href="/tour/tour-details" className="theme-btn style-2">Узнать<i className="bi bi-arrow-right"></i></Link>
                                             </div>
                                         </div>
                                     </div>

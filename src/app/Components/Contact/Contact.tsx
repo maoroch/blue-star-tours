@@ -33,7 +33,7 @@ const Contact = () => {
                                 </div>
                                 <div className="content">
                                     <h3>
-                                        <a href="mailto:info@tripco.com">info@sea-star-tourism.kz</a>
+                                        <a href="mailto:info@sea-star-tourism.kz">info@sea-star-tourism.kz</a>
                                     </h3>
                                     <p>
                                         Почта для написания вопросов
