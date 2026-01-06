@@ -24,14 +24,16 @@ const kalam = Kalam({
 
 export const metadata = {
   title: {
-    absolute: '',
-    default: 'Sea Star Tourism — тур агенство',
-    template: '%s | Sea Star Tourism - тур агенство',
+    absolute: "Sea Star Tourism — туристическое агентство в Алматы",
+    default: "Sea Star Tourism — туры и путешествия из Алматы",
+    template: "%s | Sea Star Tourism",
   },
-  description: 'Sea Star Tourism - тур агенство ',
+  description:
+    "Sea Star Tourism — туристическое агентство в Алматы. Подбор туров, пляжный отдых, экскурсионные и индивидуальные путешествия, бронирование отелей и авиабилетов по всему миру.",
   openGraph: {
-    title: 'Sea Star Tourism - тур агенство',
-    description: 'Sea Star Tourism - тур агенство',
+    title: "Sea Star Tourism — туристическое агентство в Алматы",
+    description:
+      "Sea Star Tourism — туристическое агентство в Алматы. Организуем туры и путешествия из Алматы, пляжный отдых, экскурсионные программы и индивидуальные туры.",
   },
 };
 
