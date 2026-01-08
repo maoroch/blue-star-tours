@@ -59,7 +59,7 @@ export default function Header3({ variant } : any ) {
                 </li>
               </ul>
             </div>
-            <div className="cs_top_header_right">
+{/*            <div className="cs_top_header_right">
             <div className="cs_header_social_links_wrap">
                 <div className="cs_header_social_links top-header-social-icon">
                     <div className="cs_social_btns cs_style_1">
@@ -78,7 +78,7 @@ export default function Header3({ variant } : any ) {
                   </div>
                 </div>
               </div>
-            </div>
+            </div>*/}
           </div>
         </div>
       </div> 

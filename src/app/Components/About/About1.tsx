@@ -24,32 +24,25 @@ const About1 = () => {
 
     return (
             <section className="about-section section-padding  fix bg-cover" data-background="/assets/img/about/about-bg.jpg">
-            <div className="right-shape float-bob-x">
-                <Image src="/assets/img/about/right-shape.png" alt="img" width={362} height={382}   />
-            </div>
+
             <div className="container">
                 <div className="about-wrapper">
                     <div className="row g-4">
                         <div className="col-lg-6">
                             <div className="about-image">
-                                <Image src="/assets/img/about/01.png" className="wow img-custom-anim-left" alt="img" width={350} height={425}   />
+                                <Image src="/assets/img/about/23423432.jpg" className="wow img-custom-anim-left" alt="img" width={350} height={425}   />
                                 <div className="border-image">
                                     <Image src="/assets/img/about/border.png" alt="img" width={404} height={486}   />
                                 </div>
-                                <div className="vdeo-item">
-                                    <a onClick={handelClick} className="video-btn video-popup">
-                                    <i className="bi bi-play-fill"></i>
-                                    </a>
-                                    <h5>Смотреть видео </h5>
-                                </div>
+
                                 <div className="about-image-2">
-                                    <Image src="/assets/img/about/02.png" className="wow img-custom-anim-top" alt="img" width={360} height={384}   />
+                                    <Image src="/assets/img/about/2342423.jpg" className="wow img-custom-anim-top w-100" alt="img" width={194} height={114}   />
                                     <div className="plane-shape float-bob-y">
                                         <Image src="/assets/img/about/plane-shape.png" alt="img" width={299} height={187}   />
                                     </div>
                                     <div className="about-tour">
                                         <div className="content">
-                                            <h4>15</h4>
+                                            <h4><b>15</b></h4>
                                             <span>лет опыта
                                             </span>
                                         </div>

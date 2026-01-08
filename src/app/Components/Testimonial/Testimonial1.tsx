@@ -90,9 +90,9 @@ const Testimonial1 = () => {
                                     </p>
                                     <div className="client-info-items">
                                         <div className="client-info">
-                                            <div className="client-image">
+{/*                                            <div className="client-image">
                                               <Image src={item.img} alt="img" width={60} height={60}   />
-                                            </div>
+                                            </div>*/}
                                             <div className="text">
                                                 <h4>{item.title}</h4>
                                                 <p>{item.subtitle}</p>

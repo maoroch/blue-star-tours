@@ -37,18 +37,18 @@ const Instagram2 = () => {
       };  
 
       const instagramContent = [
-        {img:'/assets/img/instagram/01.jpg'},                         
-        {img:'/assets/img/instagram/02.jpg'},                         
-        {img:'/assets/img/instagram/03.jpg'},                         
-        {img:'/assets/img/instagram/04.jpg'},                         
-        {img:'/assets/img/instagram/05.jpg'},                         
-        {img:'/assets/img/instagram/06.jpg'},                         
+        {img:'/assets/img/instagram/01.png'},                         
+        {img:'/assets/img/instagram/02.png'},                         
+        {img:'/assets/img/instagram/03.png'},                         
+        {img:'/assets/img/instagram/04.png'},                         
+        {img:'/assets/img/instagram/05.png'},                         
+        {img:'/assets/img/instagram/06.png'},                         
       ]; 
 
     return (
 <div className="instagram-banner fix section-padding">
             <div className="instagram-wrapper">
-                <h2 className="text-center wow fadeInUp" data-wow-delay=".3s">Follow Instagram</h2>
+                <h2 className="text-center wow fadeInUp" data-wow-delay=".3s">Подписывайтесь на наш Instagram</h2>
                 <div className="swiper instagram-banner-slider">
                     <div className="swiper-wrapper cs_slider_gap_301">
                     <Slider {...settings}>

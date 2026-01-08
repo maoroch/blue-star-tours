@@ -10,15 +10,12 @@ const About2 = () => {
                     <div className="row g-4">
                         <div className="col-lg-6">
                             <div className="about-image">
-                                <Image src="/assets/img/about/03.jpg" className="wow img-custom-anim-left" alt="img" width={330} height={512}   />
+                                <Image src="/assets/img/about/003.jpg" className="wow img-custom-anim-left" alt="img" width={330} height={512}   />
                                 <div className="shape-image float-bob-y">
-                                    <Image src="/assets/img/about/04.png" alt="img" width={196} height={109}   />
-                                </div>
-                                <div className="group-image float-bob-x">
-                                    <Image src="/assets/img/about/group.png" alt="img" width={170} height={50}   />
+                                    <Image src="/assets/img/about/0033.jpg" className='w-50' alt="img" width={196} height={109}   />
                                 </div>
                                 <div className="about-image-2">
-                                    <Image src="/assets/img/about/05.jpg" className="wow img-custom-anim-top" alt="img" width={284} height={411}   />
+                                    <Image src="/assets/img/about/004.jpg" className="wow img-custom-anim-top" alt="img" width={284} height={411}   />
                                     <div className="plane-shape">
                                         <Image src="/assets/img/about/plane-shape2.png" alt="img" width={370} height={205}   />
                                     </div>
@@ -29,16 +26,19 @@ const About2 = () => {
                             <div className="about-content">
                                 <div className="section-title">
                                     <span className="sub-title wow fadeInUp">
-                                        Get About Us
+                                        О нас
                                     </span>
                                     <h2 className="wow fadeInUp wow" data-wow-delay=".3s">
-                                        We are Strived Only For The
-                                        Best In The World
+                                        Путешествуй с нами с максимальным комфортом!
                                     </h2>
                                 </div>
                                 <p className="wow fadeInUp wow" data-wow-delay=".5s">
-                                    There are many variations of passages of  available, but the majority have suffered alteration in some form, by injected humour words which do not look even slightly believable injected humour words which
+                                        Туристическое агентство
+                                    <br />    🐬 15 лет открываем для вас новые страны
+                                    <br />    🌴 Более 15 000 довольных туристов
+                                    <br />    🌎 Подобрать идеальный тур ⤵️
                                 </p>
+{/*
                                 <div className="about-items wow fadeInUp wow" data-wow-delay=".3s">
                                     <div className="about-icon-items">
                                         <div className="icon">
@@ -73,7 +73,8 @@ const About2 = () => {
                                         </p>
                                     </div>
                                 </div>
-                                <Link href="/about" className="theme-btn wow fadeInUp wow" data-wow-delay=".7s">Discover More<i className="bi bi-arrow-right"></i></Link>
+                                */}
+                                <Link href="/about" className="theme-btn mt-4 wow fadeInUp wow" data-wow-delay=".7s">Discover More<i className="bi bi-arrow-right"></i></Link>
                             </div>
                         </div>
                     </div>
