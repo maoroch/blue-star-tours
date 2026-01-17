@@ -1,0 +1,202 @@
+[
+  {
+    "id": "tour-001",
+    "title": "Antalya 7-Day Beach Holiday",
+    "img": "/images/antalya-1.jpg",
+    "location": "Antalya, Turkey",
+    "rating": 4.6,
+    "day": "7 Days",
+    "number": "2 Person",
+    "price": "$850"
+  },
+  {
+    "id": "tour-002",
+    "title": "Antalya Premium 5★ All Inclusive",
+    "img": "/images/antalya-2.jpg",
+    "location": "Antalya, Turkey",
+    "rating": 4.9,
+    "day": "10 Days",
+    "number": "2 Person",
+    "price": "$1450"
+  },
+  {
+    "id": "tour-003",
+    "title": "Budget City Break in Istanbul",
+    "img": "/images/istanbul.jpg",
+    "location": "Istanbul, Turkey",
+    "rating": 4.3,
+    "day": "4 Days",
+    "number": "1 Person",
+    "price": "$480"
+  },
+  {
+    "id": "tour-004",
+    "title": "Dubai: Beach & City Experience",
+    "img": "/images/dubai-1.jpg",
+    "location": "Dubai, UAE",
+    "rating": 4.8,
+    "day": "7 Days",
+    "number": "2 Person",
+    "price": "$1200"
+  },
+  {
+    "id": "tour-005",
+    "title": "Dubai Luxury 5★ Experience",
+    "img": "/images/dubai-2.jpg",
+    "location": "Dubai, UAE",
+    "rating": 5.0,
+    "day": "9 Days",
+    "number": "2 Person",
+    "price": "$2100"
+  },
+  {
+    "id": "tour-006",
+    "title": "Phuket 8-Day Tropical Escape",
+    "img": "/images/phuket.jpg",
+    "location": "Phuket, Thailand",
+    "rating": 4.7,
+    "day": "8 Days",
+    "number": "2 Person",
+    "price": "$1100"
+  },
+  {
+    "id": "tour-007",
+    "title": "Bangkok & Phuket Combo Tour",
+    "img": "/images/bangkok.jpg",
+    "location": "Bangkok, Thailand",
+    "rating": 4.8,
+    "day": "12 Days",
+    "number": "2 Person",
+    "price": "$1650"
+  },
+  {
+    "id": "tour-008",
+    "title": "Georgia: Tbilisi & Mountains",
+    "img": "/images/tbilisi.jpg",
+    "location": "Tbilisi, Georgia",
+    "rating": 4.5,
+    "day": "6 Days",
+    "number": "2 Person",
+    "price": "$620"
+  },
+  {
+    "id": "tour-009",
+    "title": "Georgia Gastronomy Tour",
+    "img": "/images/georgia-food.jpg",
+    "location": "Kutaisi, Georgia",
+    "rating": 4.6,
+    "day": "5 Days",
+    "number": "2 Person",
+    "price": "$540"
+  },
+  {
+    "id": "tour-010",
+    "title": "Rome & Vatican Highlights",
+    "img": "/images/rome.jpg",
+    "location": "Rome, Italy",
+    "rating": 4.7,
+    "day": "5 Days",
+    "number": "1 Person",
+    "price": "$980"
+  },
+  {
+    "id": "tour-011",
+    "title": "Italy: Rome & Florence",
+    "img": "/images/florence.jpg",
+    "location": "Florence, Italy",
+    "rating": 4.8,
+    "day": "8 Days",
+    "number": "2 Person",
+    "price": "$1350"
+  },
+  {
+    "id": "tour-012",
+    "title": "Paris: City of Love",
+    "img": "/images/paris.jpg",
+    "location": "Paris, France",
+    "rating": 4.9,
+    "day": "4 Days",
+    "number": "2 Person",
+    "price": "$920"
+  },
+    {
+    "id": "tour-013",
+    "title": "Barcelona City Break",
+    "img": "/images/barcelona.jpg",
+    "location": "Barcelona, Spain",
+    "rating": 4.6,
+    "day": "5 Days",
+    "number": "2 Person",
+    "price": "$890"
+  },
+  {
+    "id": "tour-014",
+    "title": "Maldives Paradise Escape",
+    "img": "/images/maldives.jpg",
+    "location": "Malé, Maldives",
+    "rating": 5.0,
+    "day": "7 Days",
+    "number": "2 Person",
+    "price": "$2600"
+  },
+  {
+    "id": "tour-015",
+    "title": "Sri Lanka: Ocean & Tea Plantations",
+    "img": "/images/srilanka.jpg",
+    "location": "Colombo, Sri Lanka",
+    "rating": 4.7,
+    "day": "10 Days",
+    "number": "2 Person",
+    "price": "$1250"
+  },
+  {
+    "id": "tour-016",
+    "title": "Bali: Surf & Relax",
+    "img": "/images/bali.jpg",
+    "location": "Bali, Indonesia",
+    "rating": 4.9,
+    "day": "9 Days",
+    "number": "2 Person",
+    "price": "$1400"
+  },
+  {
+    "id": "tour-017",
+    "title": "Cyprus Family Holiday",
+    "img": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80",
+    "location": "Larnaca, Cyprus",
+    "rating": 4.4,
+    "day": "7 Days",
+    "number": "4 Person",
+    "price": "$980"
+  },
+  {
+    "id": "tour-018",
+    "title": "Prague Weekend Escape",
+    "img": "https://images.unsplash.com/photo-1768185595034-69de2bfe7848?q=80&w=1064&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "location": "Prague, Czech Republic",
+    "rating": 4.5,
+    "day": "3 Days",
+    "number": "2 Person",
+    "price": "$520"
+  },
+  {
+    "id": "tour-019",
+    "title": "Vietnam: Hanoi & Nha Trang",
+    "img": "/images/vietnam.jpg",
+    "location": "Nha Trang, Vietnam",
+    "rating": 4.7,
+    "day": "11 Days",
+    "number": "2 Person",
+    "price": "$1350"
+  },
+  {
+    "id": "tour-020",
+    "title": "Japan: Tokyo & Kyoto",
+    "img": "/images/japan.jpg",
+    "location": "Tokyo, Japan",
+    "rating": 4.9,
+    "day": "10 Days",
+    "number": "2 Person",
+    "price": "$1800"
+  }
+]

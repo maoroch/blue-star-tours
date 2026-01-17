@@ -10088,3 +10088,19 @@ input.main-search-input::placeholder {
     width: 200% !important;
   }
 }
+.range-slider-container input[type="range"] {
+  pointer-events: none;
+  background: transparent;
+}
+
+.range-slider-container input[type="range"]::-webkit-slider-thumb {
+  pointer-events: all;
+}
+
+.range-slider-container input[type="range"]::-moz-range-thumb {
+  pointer-events: all;
+}
+
+.range-slider-container input[type="range"]::-ms-thumb {
+  pointer-events: all;
+}

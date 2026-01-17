@@ -1,92 +1,116 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react';
 
-const Destination1 = () => {
+async function getTours() {
+  const res = await fetch('http://localhost:3000/data/tours.json', {
+    cache: 'no-store',
+  });
+  return res.json();
+}
 
-    const destinationContent = [
-        {img:'/assets/img/destination/01.jpg', location:'Indonesia', title:'Brooklyn Beach Resort Tour', rating:'4.7', day:'10 Days', number:'50+', price:'$59.00'},      
-        {img:'/assets/img/destination/02.jpg', location:'Indonesia', title:'Pak Chumphon Town Tour ', rating:'4.7', day:'10 Days', number:'50+', price:'$59.00'},      
-        {img:'/assets/img/destination/03.jpg', location:'Indonesia', title:'Java & Bali One Life Adventure', rating:'4.7', day:'10 Days', number:'50+', price:'$59.00'},      
-        {img:'/assets/img/destination/04.jpg', location:'Indonesia', title:'Places To Travel In November', rating:'4.7', day:'10 Days', number:'50+', price:'$59.00'},      
-        {img:'/assets/img/destination/05.jpg', location:'Indonesia', title:'Brooklyn Beach Resort Tour', rating:'4.7', day:'10 Days', number:'50+', price:'$59.00'},      
-        {img:'/assets/img/destination/06.jpg', location:'Indonesia', title:'Pak Chumphon Town Tour ', rating:'4.7', day:'10 Days', number:'50+', price:'$59.00'},      
-        {img:'/assets/img/destination/07.jpg', location:'Indonesia', title:'Java & Bali One Life Adventure', rating:'4.7', day:'10 Days', number:'50+', price:'$59.00'},      
-        {img:'/assets/img/destination/08.jpg', location:'Indonesia', title:'Places To Travel In November', rating:'4.7', day:'10 Days', number:'50+', price:'$59.00'},       
-      ]; 
+const Destination1 = async () => {
+  const destinationContent = await getTours();
 
-    return (
-        <section className="popular-destination-section section-padding pt-10">
-{/*
-            <div className="car-shape float-bob-x">
-                <Image src="/assets/img/destination/car.png" alt="img" width={134} height={124}   />
-            </div>
-*/}
-            <div className="container">
-                <div className="section-title-area justify-content-between">
-                    <div className="section-title">
-                        <span className="sub-title wow fadeInUp">
-                            Лучшие направления
-                        </span>
-                        <h2 className="wow fadeInUp wow" data-wow-delay=".3s">
-                            Популярные направления, которые мы предлагаем для всех
-                        </h2>
-                    </div>
-                    <Link href="/tour/tour-details" className="theme-btn wow fadeInUp wow" data-wow-delay=".5s">Узнать больше</Link>
-                </div> 
-                <div className="row">
-                {destinationContent.map((item, i) => (
-                    <div key={i} className="col-xl-3 col-lg-6 col-md-6 wow fadeInUp wow" data-wow-delay=".2s">
-                        <div className="destination-card-items">
-                            <div className="destination-image">
-                                <Image src={item.img} alt="img" width={304} height={254}   />
-{/**
- *                                 <div className="heart-icon">
-                                <i className="bi bi-heart"></i>
-                                </div>
- */}
-                            </div>
-                            <div className="destination-content">
-                                <ul className="meta">
-                                    <li>
-                                    <i className="bi bi-geo-alt"></i>
-                                        {item.location}
-                                    </li>
-                                    <li className="rating">
-                                        <div className="star">
-                                        <i className="bi bi-star-fill"></i>
-                                        </div>
-                                        <p>{item.rating}</p>
-                                    </li>
-                                </ul>
-                                <h5>
-                                    <Link href="/tour/tour-details">
-                                    {item.title}
-                                    </Link>
-                                </h5>
-                                <ul className="info">
-                                    <li>
-                                    <i className="bi bi-clock"></i>
-                                        {item.day}
-                                    </li>
-                                    <li>
-                                    <i className="bi bi-person"></i>
-                                        {item.number}
-                                    </li>
-                                </ul>
-                                <div className="price">
-                                    <h6>{item.price}<span>/Per day</span></h6>
-                                    <Link href="/tour/tour-details" className="theme-btn style-2">Узнать<i className="bi bi-arrow-right"></i></Link>
-                                </div>
-                            </div>
+  return (
+    <section className="popular-destination-section section-padding pt-10">
+      <div className="container">
+        <div className="section-title-area justify-content-between">
+          <div className="section-title">
+            <span className="sub-title">
+              Discover the best places to visit
+            </span>
+            <h2>
+              Popular Destinations
+            </h2>
+          </div>
+          <Link href="/tour/tour-details" className="theme-btn">
+            Learn More <i className="bi bi-arrow-right"></i>
+          </Link>
+        </div>
+
+        <div className="row">
+          {destinationContent
+            .slice(-4)
+            .map((item, i) => (
+              <div
+                key={i}
+                className="col-xl-3 col-lg-6 col-md-6 wow fadeInUp"
+                data-wow-delay=".2s"
+              >
+                <div className="destination-card-items">
+                  {/* Ограничиваем контейнер изображения фиксированными размерами */}
+                  <div
+                    className="destination-image"
+                    style={{
+                      width: '100%',
+                      height: '254px',
+                      position: 'relative',
+                      overflow: 'hidden',
+                      borderRadius: '10px', // если нужно скругление
+                    }}
+                  >
+                    {item.img && (
+                      <Image
+                        src={item.img}
+                        alt={item.title || 'Tour image'}
+                        fill
+                        style={{ objectFit: 'cover' }}
+                      />
+                    )}
+                  </div>
+
+                  <div className="destination-content">
+                    <ul className="meta">
+                      <li>
+                        <i className="bi bi-geo-alt"></i>
+                        {item.location}
+                      </li>
+                      <li className="rating">
+                        <div className="star">
+                          <i className="bi bi-star-fill"></i>
                         </div>
-                    </div>
-                    ))}
-                </div>
-            </div>
-        </section>
+                        <p>{item.rating}</p>
+                      </li>
+                    </ul>
 
-    );
+                    <h5>
+                      <Link href={`/tour/${item.slug}`}>
+                        {item.title}
+                      </Link>
+                    </h5>
+
+<ul className="info">
+  <li>
+    <i className="bi bi-clock"></i>
+    {item.day} {/* раньше было item.duration */}
+  </li>
+  <li>
+    <i className="bi bi-person"></i>
+    {item.number || '2 Person'}
+  </li>
+</ul>
+
+
+                    <div className="price">
+                      <h6>
+                        {item.price}
+                        <span>/Per day</span>
+                      </h6>
+                      <Link
+                        href={`/tour/${item.slug}`}
+                        className="theme-btn style-2"
+                      >
+                        Learn more <i className="bi bi-arrow-right"></i>
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+        </div>
+      </div>
+    </section>
+  );
 };
 
 export default Destination1;
