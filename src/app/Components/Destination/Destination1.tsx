@@ -1,12 +1,13 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
+
 async function getTours() {
-  const res = await fetch('http://localhost:3000/data/tours.json', {
-    cache: 'no-store',
-  });
+  const res = await fetch(`${baseUrl}/data/tours.json`, { cache: 'no-store' });
   return res.json();
 }
+
 
 const Destination1 = async () => {
   const destinationContent = await getTours();

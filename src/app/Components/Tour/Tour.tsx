@@ -266,7 +266,7 @@ export default function Tour() {
                             className="page-link"
                             onClick={() => handlePageChange(currentPage - 1)}
                             disabled={currentPage === 1}
-                            aria-label="Предыдущая страница"
+                            aria-label="Last page"
                           >
                             <i className="bi bi-chevron-left"></i>
                           </button>
@@ -300,9 +300,9 @@ export default function Tour() {
                       </ul>
                       
                       <div className="mt-3 text-muted small">
-                        Страница <span className="fw-medium">{currentPage}</span> из{' '}
+                        Page <span className="fw-medium">{currentPage}</span> of{' '}
                         <span className="fw-medium">{totalPages}</span> •{' '}
-                        <span className="fw-medium">{filteredTours.length}</span> туров
+                        <span className="fw-medium">{filteredTours.length}</span> tours
                       </div>
                     </div>
                   )}
@@ -345,7 +345,7 @@ export default function Tour() {
     }}
   />
 
-  {/* Ползунок Min */}
+  {/* Ползунок мин */}
   <input
     type="range"
     min="0"
@@ -356,18 +356,10 @@ export default function Tour() {
       ...prev,
       min: Math.min(Number(e.target.value), prev.max - 10)
     }))}
-    style={{
-      position: 'absolute',
-      top: 0,
-      left: 0,
-      width: '100%',
-      zIndex: 3,
-      background: 'transparent',
-      pointerEvents: 'all'
-    }}
+    className="range-input range-min"
   />
 
-  {/* Ползунок Max */}
+  {/* Ползунок макс */}
   <input
     type="range"
     min="0"
@@ -378,18 +370,9 @@ export default function Tour() {
       ...prev,
       max: Math.max(Number(e.target.value), prev.min + 10)
     }))}
-    style={{
-      position: 'absolute',
-      top: 0,        /* можно чуть поднять или опустить: top: '0px' или top: '-2px' */
-      left: 0,
-      width: '100%',
-      zIndex: 4,
-      background: 'transparent',
-      pointerEvents: 'all'
-    }}
+    className="range-input range-max"
   />
 </div>
-
 
                     
                     {/* Значения */}
