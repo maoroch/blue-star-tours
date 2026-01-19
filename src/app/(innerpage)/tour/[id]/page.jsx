@@ -74,6 +74,7 @@ export default function TourDetailsPage() {
 
   return (
     <section className="activities-details-section fix section-padding">
+      <div style={{ backgroundColor: '#1ca8cb', height: '90px', width: '100%', marginTop: '-120px', marginBottom: '50px' }}></div>
       <div className="container">
         <div className="activities-details-wrapper">
           <div className="row g-4 justify-content-center">
