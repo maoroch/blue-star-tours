@@ -5,10 +5,12 @@ import Tour from '../../Components/Tour/Tour';
 const page = () => {
   return (
     <div>
-             <BreadCumb
+      <div style={{ backgroundColor: '#1ca8cb', height: '90px', width: '100%'}}></div>
+{/*         <BreadCumb
                 bgimg="/assets/img/breadcrumb/breadcrumb.webp"
                 Title="Tour"
-            ></BreadCumb>    
+            ></BreadCumb> 
+            */}   
             <Tour></Tour>       
     </div>
   );

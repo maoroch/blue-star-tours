@@ -27,7 +27,7 @@ const Footer1 = () => {
                             <div className="single-widget-items text-center px-lg-2 ">
                                 <div className="widget-head">
                                     <a href="#">
-                                        <img src="/assets/img/logo/icon-star.svg" height={100} alt="img" />
+                                        <img src="/assets/img/logo/icon-star.svg" height={150} alt="img" />
                                     </a>
                                 </div>
                                 <div className="footer-content">
