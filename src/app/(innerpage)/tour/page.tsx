@@ -2,6 +2,7 @@
 import React from 'react';
 import BreadCumb from '../../Components/Common/BreadCumb';
 import Tour from '../../Components/Tour/Tour';
+import { Suspense } from 'react';
 
 const page = () => {
   return (
@@ -12,7 +13,11 @@ const page = () => {
                 Title="Tour"
             ></BreadCumb> 
             */}   
-            <Tour></Tour>       
+                  <Suspense fallback={<div>Loading tours...</div>}>
+
+            <Tour />    
+                  </Suspense>
+
     </div>
   );
 };
