@@ -3,11 +3,16 @@ import { useEffect, useState } from 'react';
 import Nav from './Nav';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
+
+
 export default function Header3({ variant } : any ) {
   const [mobileToggle, setMobileToggle] = useState(false);
   const [isSticky, setIsSticky] = useState<string>("");
   const [prevScrollPos, setPrevScrollPos] = useState<number>(0);
   const [searchToggle, setSearchToggle] = useState(false);
+const router = useRouter();
+const [searchValue, setSearchValue] = useState('');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -28,6 +33,16 @@ export default function Header3({ variant } : any ) {
       window.removeEventListener('scroll', handleScroll); // Cleanup the event listener
     };
   }, [prevScrollPos]);
+
+
+  const handleSearch = (e: React.FormEvent) => {
+  e.preventDefault();
+
+  if (!searchValue.trim()) return;
+
+  router.push(`/tour?search=${encodeURIComponent(searchValue)}`);
+  setSearchToggle(false);
+};
 
 
   return (
@@ -127,11 +142,18 @@ export default function Header3({ variant } : any ) {
             <div className="search-inner">
             <i onClick={() => setSearchToggle(!searchToggle)} id="search-close" className="bi bi-x-lg search-close"></i>
                 <div className="search-cell">
-                    <form method="get">
-                        <div className="search-field-holder">
-                            <input type="search" className="main-search-input" placeholder="Search..." />
-                        </div>
-                    </form>
+                  <form onSubmit={handleSearch}>
+                    <div className="search-field-holder">
+                      <input
+                        type="search"
+                        className="main-search-input"
+                        placeholder="Search tours..."
+                        value={searchValue}
+                        onChange={(e) => setSearchValue(e.target.value)}
+                      />
+                    </div>
+                  </form>
+
                 </div>
             </div>
         </div>

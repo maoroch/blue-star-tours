@@ -3,11 +3,23 @@ import { useEffect, useState } from 'react';
 import Nav from './Nav';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 export default function Header2({ variant } : any ) {
   const [mobileToggle, setMobileToggle] = useState(false);
   const [isSticky, setIsSticky] = useState<string>("");
   const [prevScrollPos, setPrevScrollPos] = useState<number>(0);
   const [searchToggle, setSearchToggle] = useState(false);
+const [availableCountries, setAvailableCountries] = useState<string[]>([]);
+const router = useRouter();
+
+const [query, setQuery] = useState('');
+
+const handleSearch = () => {
+  if (!query) return;
+  router.push(`/tour?search=${encodeURIComponent(query)}`);
+  setSearchToggle(false); // закрываем поиск
+};
+
 
   useEffect(() => {
     const handleScroll = () => {
@@ -29,6 +41,8 @@ export default function Header2({ variant } : any ) {
     };
   }, [prevScrollPos]);
 
+
+  
   return (
     <div>
     <header
@@ -80,11 +94,17 @@ export default function Header2({ variant } : any ) {
             <div className="search-inner">
             <i onClick={() => setSearchToggle(!searchToggle)} id="search-close" className="bi bi-x-lg search-close"></i>
                 <div className="search-cell">
-                    <form method="get">
-                        <div className="search-field-holder">
-                            <input type="search" className="main-search-input" placeholder="Search..." />
-                        </div>
-                    </form>
+                  <form onSubmit={(e) => { e.preventDefault(); handleSearch(); }}>
+                    <div className="search-field-holder">
+                      <input
+                        type="search"
+                        className="main-search-input"
+                        placeholder="Search tours..."
+                        value={query}
+                        onChange={(e) => setQuery(e.target.value)}
+                      />
+                    </div>
+                  </form>
                 </div>
             </div>
         </div>

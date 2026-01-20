@@ -27,12 +27,28 @@ export default function TourDetailsPage() {
     }
   }, [loading, tour]);
 
-  const faqContent = [
-    {title:'How do I book a tour with your agency?', content:'Nullam faucibus eleifend mi eu varius. Integer vel tincidunt massa, quis semper odio.Mauris et mollis quam. Nullam fringilla erat id ante'},
-    {title:' What payment methods do you accept?', content:'Nullam faucibus eleifend mi eu varius. Integer vel tincidunt massa, quis semper odio.Mauris et mollis quam. Nullam fringilla erat id ante'},
-    {title:'Can I customize my travel itinerary?', content:'Nullam faucibus eleifend mi eu varius. Integer vel tincidunt massa, quis semper odio.Mauris et mollis quam. Nullam fringilla erat id ante'},
-    {title:' What is your cancellation policy?', content:'Nullam faucibus eleifend mi eu varius. Integer vel tincidunt massa, quis semper odio.Mauris et mollis quam. Nullam fringilla erat id ante'},
-  ];
+const faqContent = [
+  {
+    title: 'How do I book a tour with your agency?',
+    content:
+      'You can book a tour by selecting your preferred package on our website and submitting a booking request. Our team will contact you to confirm availability and finalize the details.'
+  },
+  {
+    title: 'What payment methods do you accept?',
+    content:
+      'We accept major credit and debit cards, bank transfers, and other secure online payment methods. Payment details will be provided during the booking process.'
+  },
+  {
+    title: 'Can I customize my travel itinerary?',
+    content:
+      'Yes, we offer customized tours tailored to your preferences. You can adjust the itinerary, accommodation, activities, and travel dates to suit your needs.'
+  },
+  {
+    title: 'What is your cancellation policy?',
+    content:
+      'Cancellation policies depend on the selected tour and service providers. Please contact us for detailed information regarding cancellations, refunds, and applicable fees.'
+  }
+];
 
   const accordionContentRef = useRef(null);
   const [openItemIndex, setOpenItemIndex] = useState(-1);
@@ -202,10 +218,10 @@ export default function TourDetailsPage() {
                       </div>
                       <div className="content">
                         <span>
-                          01 Guide
+                          Guide
                         </span>
                         <h6>
-                          Guided
+                          Professional<br /> Tour Guide
                         </h6>
                       </div>
                     </div>
@@ -215,7 +231,7 @@ export default function TourDetailsPage() {
                       </div>
                       <div className="content">
                         <span>
-                          {tour.number}
+                          Group Size
                         </span>
                         <h6>
                           {tour.number}
@@ -228,7 +244,7 @@ export default function TourDetailsPage() {
                       </div>
                       <div className="content">
                         <span>
-                          {tour.day}
+                          Duration
                         </span>
                         <h6>
                           {tour.day}
@@ -257,9 +273,6 @@ export default function TourDetailsPage() {
                               <p>
                                 {item.content}
                               </p>
-                              <div className="faq-image">
-                                <Image src="/assets/img/destails/faq-img.jpg" alt="img" width={160} height={125} />
-                              </div>
                             </div>
                           </div>
                         </div>
@@ -577,7 +590,7 @@ export default function TourDetailsPage() {
                     </div>
                   </div>
                 </div>
-                <div className="booking-bg bg-cover" data-background="/assets/img/destails/booking-bg.jpg">
+                <div className="booking-bg bg-cover" data-background="/assets/img/destails/bg3.jpg">
                   <h3 className="text-title">
                     Book Now And Enjoy Amazing Savings!
                   </h3>

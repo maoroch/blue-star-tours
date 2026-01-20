@@ -68,7 +68,6 @@ export default function Header1({ variant } : any ) {
                 <Link href="/contact" className='theme-btn'>
                 <span> Contact Us <i className="bi bi-arrow-right"></i></span></Link>
                   </div>
-
               </div>
             </div>
           </div>

@@ -5,6 +5,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useState, useEffect, useMemo, useCallback } from 'react';
 import '../../assets/tours.css';
+import { useSearchParams } from 'next/navigation';
+
+
 const TOURS_PER_PAGE = 12;
 
 // Функция для извлечения страны из location
@@ -21,6 +24,26 @@ export default function Tour() {
   const [priceRange, setPriceRange] = useState({ min: 0, max: 3000 });
   const [loading, setLoading] = useState(true);
   const [availableCountries, setAvailableCountries] = useState([]);
+const searchParams = useSearchParams();
+const searchQuery = searchParams.get('search')?.toLowerCase() || '';
+const countryFromUrl = searchParams.get('country');
+const pax = searchParams.get('pax');
+const date = searchParams.get('date');
+const [selectedDate, setSelectedDate] = useState(date || '');
+const paxFromUrl = pax ? Number(pax) : null;
+
+useEffect(() => {
+  if (countryFromUrl) {
+    setSelectedCountries([countryFromUrl]);
+    setCurrentPage(1);
+  }
+}, [countryFromUrl]);
+useEffect(() => {
+  if (date) {
+    setSelectedDate(date);
+    setCurrentPage(1);
+  }
+}, [date]);
 
   useEffect(() => {
     fetch('/data/tours.json')
@@ -51,7 +74,9 @@ export default function Tour() {
         console.error('Error loading tours:', error);
       })
       .finally(() => setLoading(false));
-  }, []);
+  setCurrentPage(1);
+}, [searchQuery]);
+
 
   // Обработчик для фильтра по странам
   const handleCountryChange = useCallback((country) => {
@@ -73,25 +98,58 @@ export default function Tour() {
   }, []);
 
   // Функция для фильтрации туров
-  const filteredTours = useMemo(() => {
-    return tours.filter(tour => {
-      // Фильтр по странам
-      if (selectedCountries.length > 0) {
-        const tourCountry = extractCountry(tour.location);
-        if (!selectedCountries.includes(tourCountry)) {
-          return false;
-        }
-      }
+const filteredTours = useMemo(() => {
+  return tours.filter(tour => {
 
-      // Фильтр по цене
-      const tourPrice = Number(tour.price?.replace(/[^0-9.]/g, '') || 0);
-      if (tourPrice < priceRange.min || tourPrice > priceRange.max) {
+    // 🔍 ПОИСК ИЗ HEADER
+    if (searchQuery) {
+      const searchableText = `
+        ${tour.title}
+        ${tour.location}
+        ${tour.day}
+      `.toLowerCase();
+
+      if (!searchableText.includes(searchQuery)) {
         return false;
       }
+    }
 
-      return true;
-    });
-  }, [tours, selectedCountries, priceRange]);
+    // 🌍 Фильтр по странам
+    if (selectedCountries.length > 0) {
+      const tourCountry = extractCountry(tour.location);
+      if (!selectedCountries.includes(tourCountry)) {
+        return false;
+      }
+    }
+    
+    // 👥 Фильтр по пассажирам
+if (paxFromUrl) {
+  const tourPax = Number(tour.number?.replace(/\D/g, '') || 0);
+  if (tourPax < paxFromUrl) {
+    return false;
+  }
+}
+
+
+    // 💰 Фильтр по цене
+    const tourPrice = Number(tour.price?.replace(/[^0-9.]/g, '') || 0);
+    if (tourPrice < priceRange.min || tourPrice > priceRange.max) {
+      return false;
+    }
+    // 📅 Фильтр по дате
+    if (selectedDate) {
+      // Преобразуем строки в Date для точного сравнения
+      const tourDate = new Date(tour.availableDate);
+      const filterDate = new Date(selectedDate);
+
+      // Фильтруем только туры с датой >= выбранной даты
+      if (tourDate < filterDate) {
+        return false;
+      }
+    }
+    return true;
+  });
+}, [tours, selectedCountries, priceRange, searchQuery, selectedDate]);
 
   // Получаем количество туров для каждой страны
   const getCountryCount = useCallback((country) => {

@@ -4385,7 +4385,7 @@ span {
   height: 100%;
   content: "";
   border-radius: 20px;
-  background: linear-gradient(180deg, rgba(14, 14, 14, 0) 19.86%, #0E0E0E 77.79%);
+  background: linear-gradient(180deg, rgba(14, 14, 14, 0) 19.86%, #0e0e0ed1 77.79%);
 }
 .activities-details-wrapper .main-bar .booking-bg .text-title {
   text-align: center;

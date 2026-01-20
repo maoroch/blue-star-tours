@@ -1,11 +1,28 @@
 "use client"
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import loadBackgroudImages from '../Common/loadBackgroudImages';
 import parse from 'html-react-parser';
 import Slider from 'react-slick';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 
 const HeroBanner1 = () => {
+  const router = useRouter();
+const [availableCountries, setAvailableCountries] = useState<string[]>([]);
+
+  const [country, setCountry] = useState('');
+  const [date, setDate] = useState('');
+  const [passengers, setPassengers] = useState('1');
+
+const handleSearch = () => {
+  const params = new URLSearchParams();
+
+  if (country) params.set('country', country);
+  if (date) params.set('date', date);
+  if (passengers) params.set('pax', passengers);
+
+  router.push(`/tour?${params.toString()}`);
+};
 
 
 const heroContent = [
@@ -30,6 +47,21 @@ const heroContent = [
       useEffect(() => {
         loadBackgroudImages();
     }, []);
+    useEffect(() => {
+  fetch('/data/tours.json')
+    .then(res => res.json())
+    .then(data => {
+      const countriesSet = new Set<string>();
+      data.forEach((tour: any) => {
+        const parts = tour.location.split(',');
+        const tourCountry = parts.length > 1 ? parts[1].trim() : parts[0].trim();
+        countriesSet.add(tourCountry);
+      });
+      setAvailableCountries(Array.from(countriesSet).sort());
+    })
+    .catch(err => console.error('Error loading countries:', err));
+}, []);
+
 
     const settings = {
         dots: false,
@@ -92,11 +124,16 @@ const heroContent = [
                                                         Countries
                                                     </h6>
                                                     <div className="form">
-                                                        <select className="single-select w-100">
-                                                            <option>China</option>
-                                                            <option>UAE</option>
-                                                            <option>Georgia</option>
-                                                            <option>Uzbekistan</option>
+                                                        <select
+                                                        className="single-select w-100"
+                                                        value={country}
+                                                        onChange={(e) => setCountry(e.target.value)}
+                                                        >
+                                                            <option value="">All countries</option>
+                                                            {availableCountries.map(c => (
+                                                            <option key={c} value={c}>{c}</option>
+                                                            ))}
+
                                                         </select>
                                                     </div>
                                                 </div>
@@ -128,7 +165,11 @@ const heroContent = [
                                                 <div className="content">
                                                     <h6>Dates</h6>
                                                     <div className="form-clt">
-                                                        <input type="date" id="date1" name="date1" />
+                                                        <input
+                                                        type="date"
+                                                        value={date}
+                                                        onChange={(e) => setDate(e.target.value)}
+                                                        />
                                                     </div>
                                                 </div>
                                             </div>
@@ -139,16 +180,24 @@ const heroContent = [
                                                 <div className="content">
                                                     <h6>Passengers</h6>
                                                     <div className="form">
-                                                        <select className="single-select w-100">
-                                                            <option>01</option>
-                                                            <option>02</option>
-                                                            <option>03</option>
-                                                            <option>04</option>
+                                                        <select
+                                                        className="single-select w-100"
+                                                        value={passengers}
+                                                        onChange={(e) => setPassengers(e.target.value)}
+                                                        >
+                                                        <option value="1">01</option>
+                                                        <option value="2">02</option>
+                                                        <option value="3">03</option>
+                                                        <option value="4">04</option>
                                                         </select>
+
                                                     </div>
                                                 </div>
                                             </div>
-                                            <button className="theme-btn" type="submit">Search</button>
+                                            <button className="theme-btn" onClick={handleSearch}>
+                                                Search
+                                                </button>
+
                                         </div>
                                     </div>
                                     <div className="counter-area">
